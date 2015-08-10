@@ -1,0 +1,30 @@
+<md-content ng-controller="MainCtrl">
+  <div class="container top-margin">
+    <div layout="row" layout-sm="column">
+      <form name="mform" style="width:400px">
+        <md-input-container>
+          <label>Movie id:</label>
+          <input ng-model="newmovie">
+        </md-input-container>
+        <md-button md-no-ink class="md-primary" ng-click="AddMovie()">Add new movie</md-button>
+      </form>
+    </div>
+     <button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
+    <p><strong>Sorting:</strong> {{tableParams.sorting()|json}}
+      <table ng-table="tableParams" class="table">
+
+        <!-- ng-repeat="m in data" - działająca zmiana kolejnosci dragNdrop, po dodaniu filmu automatycznie dodaje do widoku strony. Nie działąjąca paginacja-->
+
+        <tr  ng-repeat="m in $data" ng-drop="true" ng-drop-success="onDropComplete($index, $data,$event)" ng-drag="true" ng-drag-data="m" ng-class="m">
+          <td><button ng-click="RemoveVideo(m.MovieID,$index)" class="btn btn-default pull-right">Remove</button></td>
+          <td data-title="'Preview'"><iframe width="200" height="113" ng-src="{{m.Url}}" frameborder="0" allowfullscreen></iframe></td>
+          <td data-title="'View Count'" sortable="'View'">{{m.View}}</td>
+          <td data-title="'Like count'" sortable="'Like'">{{m.Like}}</td>
+          <td data-title="'Favorite count'" sortable="'Favorite'">{{m.Favorite}}</td>
+          <td data-title="'Dislike count'" sortable="'Dislike'">{{m.Dislike}}</td>
+          <td data-title="'Comment count'" sortable="'Comment'">{{m.Comment}}</td>
+        </tr>
+      </table>
+
+    </div>
+  </md-content>
