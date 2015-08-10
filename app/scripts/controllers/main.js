@@ -1,4 +1,5 @@
 'use strict';
+
 var Movie = function(movieid,viewCount,likeCount,favoriteCount,dislikeCount,commentCount){
   this.MovieID = movieid;
   this.View = viewCount;
@@ -8,8 +9,9 @@ var Movie = function(movieid,viewCount,likeCount,favoriteCount,dislikeCount,comm
   this.Comment = commentCount;
   this.Url = "https://www.youtube.com/embed/"+movieid+"?rel=0&amp;showinfo=0";
 }
+
 angular.module('YoutubeLibary')
-.controller('MainCtrl', ['$scope', '$localStorage', '$http', '$q', '$filter', 'ngTableParams' , function($scope, $localStorage, $http, $q, $filter, ngTableParams){
+.controller('MainCtrl' ,  ['$scope', '$localStorage', '$http', '$q', '$filter', 'ngTableParams' , function($scope, $localStorage, $http, $q, $filter, ngTableParams ){
   if(!$localStorage.hasOwnProperty('newMovies')){
     $localStorage.newMovies = [];
   }

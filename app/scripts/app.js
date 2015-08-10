@@ -12,6 +12,8 @@ angular
     'ngMaterial',
     'ngTable',
     'ngDraggable'
+    //'youtubeServices',
+
 
 
   ])
