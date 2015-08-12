@@ -15,7 +15,7 @@
 
         <!-- ng-repeat="m in data" - działająca zmiana kolejnosci dragNdrop, po dodaniu filmu automatycznie dodaje do widoku strony. Nie działąjąca paginacja-->
 
-        <tr  ng-repeat="m in data" ng-drop="true" ng-drop-success="onDropComplete($index, $data,$event)" ng-drag="true" ng-drag-data="m" ng-class="m">
+        <tr  ng-repeat="m in $data" ng-drop="true" ng-drop-success="onDropComplete($index, $data,$event)" ng-drag="true" ng-drag-data="m" ng-class="m">
           <td><button ng-click="RemoveVideo(m.MovieID,$index)" class="btn btn-default pull-right">Remove</button></td>
           <td data-title="'Preview'"><iframe width="200" height="113" ng-src="{{m.Url}}" frameborder="0" allowfullscreen></iframe></td>
           <td data-title="'View Count'" sortable="'View'">{{m.View}}</td>
