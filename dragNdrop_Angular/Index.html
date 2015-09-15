@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="main.css">
+		<title>ImgReader</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
+
+		<script src="scripts/app.js"></script>
+		<script src="scripts/imgGallery/galleryConfig.js"></script>
+		<script src="scripts/imgGallery/galleryFactory.js"></script>
+		<script src="scripts/imgGallery/fileProcFactory.js"></script>
+		<script src="scripts/imgGallery/initGalleryDirective.js"></script>
+	</head>
+
+	<body >
+
+		<div init-gallery>
+			<button type="button" onclick="cc()">Clear localStorage</button>
+			</br>
+			</br>
+			<input class="dropper invis" type="file" id="files" name="files[]" multiple >
+			</br>
+			<output id="imgOutput"></output>
+		</div>
+	</body>
+
+	<script>
+		function cc () {
+			window.localStorage.clear();
+		};
+	</script>
+</html>
