@@ -1,0 +1,38 @@
+body {
+	font-family: "Arial";
+	font-size: 12pt;
+}
+
+header h1 {
+	font-size:12pt;
+	color: #fff;
+	background-color: #1BA1E2;
+	padding: 20px;
+}
+
+.dropper {
+	width:400px;
+	height: 200px;
+	border: dashed red 2px;
+	border-radius: 5px;
+	color: white;
+}
+span {
+    overflow: scroll;
+}
+
+canvas {
+	border-radius: 5px;
+	margin:5px;
+    border:1px solid grey;
+}
+
+.invis::-moz-file-upload-button {
+	visibility: hidden;
+}
+.invis::-webkit-file-upload-button {
+	visibility: hidden;
+}
+.invis::-o-file-upload-button {
+	visibility: hidden;
+}
